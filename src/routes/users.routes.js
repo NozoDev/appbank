@@ -6,14 +6,15 @@ const router = express.Router();
 
 router.post(
   '/signup',
-  validationMiddleware.createUserValidation, 
+  validationMiddleware.createUserValidation,
   userController.signup
 );
 
 router.post(
   '/login',
-  validationMiddleware.loginUserValidation, 
+  validationMiddleware.loginUserValidation,
   userController.login
 );
 
+router.get('/:id/history', userController.transferHistory);
 module.exports = router;

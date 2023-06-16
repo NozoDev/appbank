@@ -38,3 +38,23 @@ exports.loginUserValidation = [
     .withMessage('Password must be at least 8 characters long!😬'),
   validateFields,
 ];
+
+// Tranfers validation
+exports.transferUserValidation = [
+  body('amount')
+    .notEmpty()
+    .withMessage('amount cannot be empty! 🫢')
+    .isInt({ min: 1 })
+    .withMessage('transfers number must be a valid number!🥱🥱'),
+  body('senderUserId')
+    .notEmpty()
+    .withMessage('user id cannot be empty!🫢')
+    .isInt({ min: 1 }) //
+    .withMessage('Password must be at least 8 characters long!😬'),
+  body('receiverUserId')
+    .notEmpty()
+    .withMessage('user id cannot be empty!🫢')
+    .isInt({ min: 1 }) //
+    .withMessage('Password must be at least 8 characters long!😬'),
+  validateFields,
+];
